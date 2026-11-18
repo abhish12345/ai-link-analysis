@@ -4,6 +4,24 @@ A **FastAPI** application that takes a website URL, extracts its content using B
 
 ---
 
+## Live Demo
+
+| Requirement | URL |
+|---|---|
+| **Live Demo** | https://ai-link-analysis-iwuq.onrender.com |
+| **API Endpoint** | https://ai-link-analysis-iwuq.onrender.com/link-analysis |
+| **API Documentation** | https://ai-link-analysis-iwuq.onrender.com/docs |
+
+### Try it live
+
+```bash
+curl -X POST https://ai-link-analysis-iwuq.onrender.com/link-analysis \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://fastapi.tiangolo.com"}'
+```
+
+---
+
 ## Features
 
 - **Website Content Extraction** — fetches HTML, strips noise (scripts, styles, nav), extracts titles, headings, meta, and body text
@@ -47,7 +65,7 @@ ai-link-analysis/
 │       └── validators.py       # URL validation + SSRF protection
 │
 ├── tests/
-│   └── test_link_analysis.py    # Test suite (9 tests)
+│   └── test_link_analysis.py    # Test suite (13 tests)
 │
 ├── docs/
 │   └── sample_logs.md           # Sample API responses
@@ -127,45 +145,104 @@ curl -X POST http://localhost:4000/link-analysis \
 ```json
 {
   "success": true,
-  "website": "https://example.com",
+  "website": "https://fastapi.tiangolo.com",
   "brand": {
-    "name": "Example Corp",
-    "category": "Technology Services",
-    "summary": "A technology company providing digital solutions."
+    "name": "FastAPI",
+    "category": "Python Web Framework",
+    "summary": "FastAPI is a modern, high-performance Python web framework for building APIs."
   },
   "analysis": {
     "competitor_analysis": {
-      "brand_name": "Example Corp",
-      "business_overview": "...",
-      "business_category": "Technology Services",
-      "main_products_services": ["..."],
-      "competitors": [
-        {"name": "Competitor A", "main_service": "...", "strengths": [], "weaknesses": []}
+      "brand_name": "FastAPI",
+      "business_overview": "A modern, high-performance Python web framework...",
+      "business_category": "Python Web Framework",
+      "main_products_services": [
+        "High-performance API development",
+        "Automatic interactive API documentation",
+        "Data validation and parsing with Pydantic",
+        "Type conversion for network data",
+        "Editor support with completion and type checks"
       ],
-      "your_strengths": [],
-      "competitive_advantages": [],
-      "opportunities": []
+      "competitors": [
+        {
+          "name": "Flask",
+          "main_service": "Microframework for web development",
+          "strengths": ["Established ecosystem", "Large community"],
+          "weaknesses": ["Lower performance", "No built-in async support"]
+        },
+        {
+          "name": "Django",
+          "main_service": "Full-stack web framework",
+          "strengths": ["Batteries-included", "Built-in admin"],
+          "weaknesses": ["Heavier", "Slower for API-only use cases"]
+        },
+        {
+          "name": "Starlette",
+          "main_service": "Lightweight ASGI framework",
+          "strengths": ["Very fast", "Minimal"],
+          "weaknesses": ["Less features", "Smaller community"]
+        }
+      ],
+      "your_strengths": [
+        "Exceptional performance, on par with NodeJS and Go",
+        "200-300% faster coding speed",
+        "40% fewer bugs",
+        "Automatic interactive documentation",
+        "Standard Python type hints"
+      ],
+      "competitive_advantages": [
+        "Personalized service",
+        "Competitive pricing"
+      ],
+      "opportunities": [
+        "Expand content for ML deployment use cases",
+        "Develop more advanced tutorials",
+        "Foster community contributions"
+      ]
     },
     "target_search_queries": [
-      {"query": "...", "platforms": ["Google"], "intent": "Service Search", "business_relevance": "...", "target_audience": "..."}
+      {"query": "FastAPI tutorial get started", "platforms": ["Google"], "intent": "Service Discovery", "business_relevance": "...", "target_audience": "Backend Developers"},
+      {"query": "Python high performance API framework", "platforms": ["Google", "LinkedIn"], "intent": "Service Search", "business_relevance": "...", "target_audience": "Software Architects"},
+      {"query": "build REST API with Python type hints", "platforms": ["Google"], "intent": "Service Search", "business_relevance": "...", "target_audience": "Python Developers"},
+      {"query": "FastAPI automatic swagger docs", "platforms": ["Google"], "intent": "Business Discovery", "business_relevance": "...", "target_audience": "API Developers"},
+      {"query": "FastAPI vs Flask performance", "platforms": ["Google", "X"], "intent": "Business Discovery", "business_relevance": "...", "target_audience": "Backend Engineers"}
     ],
     "seo_improvements": {
-      "primary_keyword": "...",
-      "secondary_keywords": [],
-      "long_tail_keywords": [],
-      "recommended_title": "...",
-      "meta_description": "...",
-      "supporting_content": []
+      "primary_keyword": "FastAPI Python web framework",
+      "secondary_keywords": ["Python API development", "high performance API", "async Python framework", "REST API Python", "OpenAPI documentation"],
+      "long_tail_keywords": ["how to build fast API with Python", "FastAPI Pydantic validation tutorial", "deploy FastAPI to production", "FastAPI microservices architecture", "automatic API docs Python framework"],
+      "recommended_title": "FastAPI | High-Performance Python Web Framework for Building Robust APIs",
+      "meta_description": "Build fast, robust, and production-ready APIs with FastAPI. Leverage standard Python type hints, automatic interactive documentation...",
+      "supporting_content": [
+        "Getting Started with FastAPI guide",
+        "Building Machine Learning API with FastAPI tutorial",
+        "FastAPI vs Flask vs Django comparison article",
+        "Case studies from Microsoft, Uber, Netflix",
+        "FAQ section on performance and async programming"
+      ]
     },
     "top_services": [
-      {"service_name": "...", "description": "...", "target_industry": "...", "target_customer": "...", "main_benefit": "..."}
+      {"service_name": "High-Performance API Development", "description": "Build extremely fast APIs", "target_industry": "Technology", "target_customer": "Backend Developers", "main_benefit": "Production-ready performance"},
+      {"service_name": "Automatic Interactive API Documentation", "description": "Auto-generate Swagger UI and ReDoc", "target_industry": "Technology", "target_customer": "API Developers", "main_benefit": "Zero-effort documentation"},
+      {"service_name": "Robust Data Validation", "description": "Automatic validation with Pydantic", "target_industry": "Technology", "target_customer": "Backend Developers", "main_benefit": "40% fewer bugs"},
+      {"service_name": "Rapid API Prototyping", "description": "200-300% faster coding speed", "target_industry": "Technology", "target_customer": "Startup Founders", "main_benefit": "Faster time to market"},
+      {"service_name": "Standards-Based API Building", "description": "Compatible with OpenAPI and JSON Schema", "target_industry": "Technology", "target_customer": "Software Architects", "main_benefit": "Interoperability"}
     ],
     "target_audience": {
-      "primary_audience": [],
-      "secondary_audience": [],
-      "industries": [],
-      "customer_needs": [],
-      "recommended_segments": []
+      "primary_audience": ["Python Developers", "Backend Engineers", "Software Architects"],
+      "secondary_audience": ["Data Scientists", "DevOps Engineers", "Full-stack Developers"],
+      "industries": ["Technology", "SaaS", "Data Science", "Fintech", "E-commerce", "Healthcare"],
+      "business_types": ["SMBs", "Startups", "Enterprise"],
+      "location_focus": "Global",
+      "customer_needs": ["Building high-performance APIs", "Reducing development time", "Ensuring data validation", "Automatic documentation"],
+      "customer_challenges": ["Limited IT budget", "Lack of in-house expertise"],
+      "recommended_segments": [
+        {"audience": "Backend Developers", "business_type": "Tech Company", "requirement": "Build fast microservices"},
+        {"audience": "Data Scientists", "business_type": "AI/ML Team", "requirement": "Deploy ML models as APIs"},
+        {"audience": "Software Architects", "business_type": "Enterprise IT", "requirement": "Standards-based APIs"},
+        {"audience": "Startup Founders", "business_type": "Early-stage Startup", "requirement": "Rapid prototyping"},
+        {"audience": "Full-stack Developers", "business_type": "Web Agency", "requirement": "Backend + frontend integration"}
+      ]
     }
   }
 }
@@ -194,6 +271,25 @@ curl -X POST http://localhost:4000/link-analysis \
 
 ```bash
 pytest tests/ -v
+```
+
+Expected output:
+
+```
+tests/test_link_analysis.py::test_valid_url_accepted              PASSED
+tests/test_link_analysis.py::test_invalid_scheme_rejected         PASSED
+tests/test_link_analysis.py::test_no_hostname_rejected            PASSED
+tests/test_link_analysis.py::test_empty_url_rejected              PASSED
+tests/test_link_analysis.py::test_localhost_blocked               PASSED
+tests/test_link_analysis.py::test_private_ip_blocked              PASSED
+tests/test_link_analysis.py::test_loopback_ip_blocked             PASSED
+tests/test_link_analysis.py::test_health_check                    PASSED
+tests/test_link_analysis.py::test_missing_url_field               PASSED
+tests/test_link_analysis.py::test_invalid_scheme_url              PASSED
+tests/test_link_analysis.py::test_localhost_blocked_by_ssrf       PASSED
+tests/test_link_analysis.py::test_successful_analysis_with_mock   PASSED
+tests/test_link_analysis.py::test_insufficient_content_rejected   PASSED
+========================= 13 passed ==========================
 ```
 
 ---
@@ -273,12 +369,16 @@ The API validates all URLs before fetching:
 
 ## Deployment
 
-This app is ready for deployment on Render, Railway, or any platform that supports Python:
+This app is deployed on **Render.com** — live at [https://ai-link-analysis-iwuq.onrender.com](https://ai-link-analysis-iwuq.onrender.com)
+
+### Deploy your own instance
 
 1. Set environment variable `GEMINI_API_KEY` on your hosting platform
 2. Build command: `pip install -r requirements.txt`
 3. Start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 4. Health check: `GET /`
+
+> Note: `$PORT` is provided automatically by Render — do not replace it with a hardcoded port number.
 
 ---
 
