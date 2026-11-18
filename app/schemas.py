@@ -85,6 +85,7 @@ class TargetAudience(BaseModel):
     location_focus: str = Field(default="", description="Geographical focus if available")
     customer_needs: list[str] = Field(default_factory=list)
     customer_challenges: list[str] = Field(default_factory=list)
+    customer_interests: list[str] = Field(default_factory=list, description="Potential customer interests")
     recommended_segments: list[AudienceSegment] = Field(default_factory=list)
 
 

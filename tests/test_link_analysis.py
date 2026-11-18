@@ -136,6 +136,7 @@ async def test_successful_analysis_with_mock():
             secondary_audience=["Startups"],
             industries=["Tech"],
             customer_needs=["Websites"],
+            customer_interests=["Web design"],
             recommended_segments=[
                 AudienceSegment(audience="SMBs", business_type="Small Business", requirement="Web")
             ],

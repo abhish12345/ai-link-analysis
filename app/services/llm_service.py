@@ -28,7 +28,9 @@ Rules:
 4. Generate exactly 5 target search queries and 5 top services.
 5. All competitor information should be clearly marked as AI-generated suggestions unless verified.
 6. SEO recommendations must be practical and specific to the website's industry.
-7. Return valid JSON matching the provided schema exactly."""
+7. Services must be identified from actual website content wherever possible.
+   Clearly label any inferred recommendations in the description field.
+8. Return valid JSON matching the provided schema exactly."""
 
 
 class LLMService:
